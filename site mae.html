@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penha Andreia — Estética & Bem-Estar | Grande Vitória, ES</title>
+<meta name="description" content="Atendimento domiciliar especializado em pós-cirúrgico, limpeza de pele e massagem na Grande Vitória, ES. Agende com Penha Andreia Miranda Suzano.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --sage:#4a7c59;
+  --sage-light:#7aac89;
+  --sage-pale:#e8f0eb;
+  --sage-mid:#c5dbc9;
+  --cream:#faf8f4;
+  --stone:#8a8a7a;
+  --dark:#2a2a22;
+  --warm:#f5f0e8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,248,244,0.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--sage-mid);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 3rem;
+}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.1rem;letter-spacing:0.08em;color:var(--sage)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.82rem;letter-spacing:0.12em;color:var(--stone);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--sage)}
+.nav-btn{background:var(--sage);color:#fff;border:none;padding:0.55rem 1.4rem;border-radius:2rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;text-decoration:none}
+.nav-btn:hover{background:var(--sage-light)}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+}
+
+section{padding:5rem 3rem}
+@media(max-width:768px){section{padding:4rem 1.5rem}}
+
+.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--cream) 0%,var(--sage-pale) 60%,var(--sage-mid) 100%);position:relative;overflow:hidden;padding-top:6rem}
+.hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(74,124,89,0.08) 0%,transparent 70%);top:-100px;right:-100px}
+.hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(74,124,89,0.06) 0%,transparent 70%);bottom:-80px;left:10%}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%}
+@media(max-width:768px){.hero-inner{grid-template-columns:1fr;gap:2.5rem}}
+.hero-eyebrow{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--sage)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:3.8rem;line-height:1.1;color:var(--dark);margin-bottom:1.5rem}
+.hero-title em{font-style:italic;color:var(--sage)}
+@media(max-width:768px){.hero-title{font-size:2.8rem}}
+.hero-subtitle{font-size:1rem;line-height:1.7;color:var(--stone);margin-bottom:2.5rem;font-weight:300}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--sage);color:#fff;padding:0.85rem 2rem;border-radius:2rem;font-size:0.85rem;letter-spacing:0.08em;text-decoration:none;text-transform:uppercase;transition:all .2s;display:inline-block}
+.btn-primary:hover{background:var(--sage-light);transform:translateY(-2px)}
+.btn-outline{border:1px solid var(--sage);color:var(--sage);padding:0.85rem 2rem;border-radius:2rem;font-size:0.85rem;letter-spacing:0.08em;text-decoration:none;text-transform:uppercase;transition:all .2s;display:inline-block}
+.btn-outline:hover{background:var(--sage-pale)}
+.hero-visual{display:flex;flex-direction:column;gap:1rem;position:relative;z-index:1}
+.hero-card{background:rgba(255,255,255,0.85);border:1px solid var(--sage-mid);border-radius:1rem;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;backdrop-filter:blur(8px)}
+.hero-card-icon{width:48px;height:48px;border-radius:50%;background:var(--sage-pale);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.hero-card-title{font-size:0.9rem;font-weight:500;color:var(--dark);margin-bottom:0.2rem}
+.hero-card-sub{font-size:0.78rem;color:var(--stone)}
+.area-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(74,124,89,0.12);border:1px solid rgba(74,124,89,0.25);color:var(--sage);border-radius:2rem;padding:0.4rem 1rem;font-size:0.78rem;letter-spacing:0.08em;margin-top:1rem}
+
+.section-badge{display:inline-block;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);background:var(--sage-pale);border:1px solid var(--sage-mid);padding:0.35rem 1rem;border-radius:2rem;margin-bottom:1.2rem}
+.section-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.6rem;line-height:1.2;margin-bottom:1rem}
+.section-subtitle{color:var(--stone);font-size:0.95rem;line-height:1.7;font-weight:300;max-width:480px}
+
+.services{background:var(--warm)}
+.services-inner{max-width:1100px;margin:0 auto}
+.services-header{text-align:center;margin-bottom:3.5rem}
+.services-header .section-subtitle{margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.services-grid{grid-template-columns:1fr}}
+.service-card{background:#fff;border:1px solid var(--sage-mid);border-radius:1.2rem;padding:2rem;transition:all .3s;cursor:default}
+.service-card:hover{transform:translateY(-4px);border-color:var(--sage);box-shadow:0 12px 32px rgba(74,124,89,0.1)}
+.service-icon{width:56px;height:56px;border-radius:0.8rem;background:var(--sage-pale);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem;border:1px solid var(--sage-mid)}
+.service-title{font-size:1rem;font-weight:500;margin-bottom:0.6rem;color:var(--dark)}
+.service-desc{font-size:0.85rem;color:var(--stone);line-height:1.65;font-weight:300}
+.service-tag{display:inline-block;margin-top:1rem;font-size:0.72rem;color:var(--sage);letter-spacing:0.08em;text-transform:uppercase}
+
+.about{background:var(--cream)}
+.about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+@media(max-width:768px){.about-inner{grid-template-columns:1fr;gap:3rem}}
+.about-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.about-stat{background:var(--sage-pale);border:1px solid var(--sage-mid);border-radius:1rem;padding:1.5rem;text-align:center}
+.about-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--sage);margin-bottom:0.3rem}
+.about-stat-label{font-size:0.75rem;letter-spacing:0.1em;color:var(--stone);text-transform:uppercase}
+.about-quote{background:#fff;border:1px solid var(--sage-mid);border-left:3px solid var(--sage);border-radius:0 1rem 1rem 0;padding:1.25rem 1.5rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--dark);line-height:1.6;margin-top:1rem}
+.about-quote span{display:block;margin-top:0.5rem;font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.75rem;color:var(--stone);letter-spacing:0.1em;text-transform:uppercase}
+.about-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem}
+.tag{font-size:0.78rem;color:var(--sage);border:1px solid var(--sage-mid);background:var(--sage-pale);padding:0.3rem 0.9rem;border-radius:2rem}
+
+.testimonials{background:var(--warm)}
+.testimonials-inner{max-width:1100px;margin:0 auto}
+.testimonials-header{text-align:center;margin-bottom:3rem}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:900px){.testimonials-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.testimonials-grid{grid-template-columns:1fr}}
+.testimonial-card{background:#fff;border:1px solid var(--sage-mid);border-radius:1.2rem;padding:1.75rem}
+.testimonial-stars{color:var(--sage);margin-bottom:1rem;font-size:0.9rem;letter-spacing:0.1em}
+.testimonial-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;line-height:1.65;color:var(--dark);margin-bottom:1.2rem}
+.testimonial-author{display:flex;align-items:center;gap:0.75rem}
+.testimonial-avatar{width:36px;height:36px;border-radius:50%;background:var(--sage-pale);border:1px solid var(--sage-mid);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:500;color:var(--sage)}
+.testimonial-name{font-size:0.82rem;font-weight:500;color:var(--dark)}
+.testimonial-info{font-size:0.75rem;color:var(--stone)}
+
+.gallery{background:var(--cream)}
+.gallery-inner{max-width:1100px;margin:0 auto}
+.gallery-header{text-align:center;margin-bottom:3rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:200px 200px;gap:1rem}
+@media(max-width:700px){.gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(4,160px)}.gallery-item:nth-child(1){grid-column:auto;grid-row:auto}.gallery-item:nth-child(4){grid-column:auto;grid-row:auto}}
+.gallery-item{border-radius:1rem;overflow:hidden;border:1px solid var(--sage-mid)}
+.gallery-item:nth-child(1){grid-column:1/3;grid-row:1/2}
+.gallery-item:nth-child(4){grid-column:3/5;grid-row:2/3}
+.gallery-item-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem}
+.gallery-item:nth-child(1) .gallery-item-inner{background:linear-gradient(135deg,var(--sage-pale),var(--sage-mid))}
+.gallery-item:nth-child(2) .gallery-item-inner{background:linear-gradient(135deg,#e8f4ee,#b8ddc0)}
+.gallery-item:nth-child(3) .gallery-item-inner{background:linear-gradient(135deg,#dff0e5,var(--sage-pale))}
+.gallery-item:nth-child(4) .gallery-item-inner{background:linear-gradient(135deg,var(--sage-mid),#9dcca8)}
+.gallery-item:nth-child(5) .gallery-item-inner{background:linear-gradient(135deg,#eaf2ec,#c8e2cc)}
+.gallery-icon{font-size:2.2rem;opacity:0.7}
+.gallery-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);font-weight:500}
+
+.contact{background:var(--sage-pale)}
+.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+@media(max-width:768px){.contact-inner{grid-template-columns:1fr;gap:3rem}}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.contact-item{display:flex;align-items:flex-start;gap:1rem}
+.contact-item-icon{width:44px;height:44px;border-radius:0.8rem;background:#fff;border:1px solid var(--sage-mid);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.contact-item-title{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);margin-bottom:0.25rem}
+.contact-item-val{font-size:0.95rem;color:var(--dark)}
+.contact-item-val a{color:var(--sage);text-decoration:none}
+.contact-item-val a:hover{text-decoration:underline}
+.contact-form{background:#fff;border:1px solid var(--sage-mid);border-radius:1.2rem;padding:2rem}
+.form-group{margin-bottom:1.25rem}
+.form-label{display:block;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);margin-bottom:0.5rem}
+.form-input{width:100%;padding:0.8rem 1rem;border:1px solid var(--sage-mid);border-radius:0.6rem;font-family:'DM Sans',sans-serif;font-size:0.9rem;background:var(--cream);color:var(--dark);outline:none;transition:border .2s}
+.form-input:focus{border-color:var(--sage)}
+.form-textarea{min-height:100px;resize:vertical}
+.form-btn{width:100%;background:var(--sage);color:#fff;border:none;padding:0.9rem;border-radius:0.6rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.form-btn:hover{background:var(--sage-light)}
+.whatsapp-btn{display:flex;align-items:center;justify-content:center;gap:0.75rem;background:#25D366;color:#fff;border-radius:0.6rem;padding:0.75rem;font-size:0.85rem;text-decoration:none;letter-spacing:0.06em;margin-top:0.75rem;transition:opacity .2s}
+.whatsapp-btn:hover{opacity:0.88}
+
+footer{background:var(--dark);color:rgba(255,255,255,0.6);text-align:center;padding:2rem 3rem;font-size:0.8rem;letter-spacing:0.06em}
+footer span{color:var(--sage-light)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Penha Andreia</div>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://wa.me/5527992540574" class="nav-btn">Agendar</a>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Cuidado com atenção & dedicação</div>
+      <h1 class="hero-title">Estética &<br><em>Bem-Estar</em><br>em seu lar</h1>
+      <p class="hero-subtitle">Atendimento domiciliar especializado em pós-cirúrgico, limpeza de pele e massagem. Recuperação com conforto, cuidado e profissionalismo.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/5527992540574" class="btn-primary">Agendar Consulta</a>
+        <a href="#servicos" class="btn-outline">Ver Serviços</a>
+      </div>
+      <div class="area-badge">📍 Espírito Santo — Grande Vitória</div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-icon">🏥</div>
+        <div>
+          <div class="hero-card-title">Pós-Cirúrgico</div>
+          <div class="hero-card-sub">Drenagem, curativo e cuidados especializados</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">✨</div>
+        <div>
+          <div class="hero-card-title">Limpeza de Pele</div>
+          <div class="hero-card-sub">Higienização profunda e tratamento facial</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🌿</div>
+        <div>
+          <div class="hero-card-title">Massagem</div>
+          <div class="hero-card-sub">Relaxante, modeladora e terapêutica</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicos">
+  <div class="services-inner">
+    <div class="services-header">
+      <div class="section-badge">Serviços</div>
+      <h2 class="section-title">O que ofereço</h2>
+      <p class="section-subtitle">Procedimentos realizados com técnica, higiene e todo o cuidado que você merece — sem sair de casa.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🩹</div>
+        <div class="service-title">Pós-Cirúrgico</div>
+        <p class="service-desc">Drenagem linfática, troca de curativos, acompanhamento de cicatrização e orientações de recuperação segura no seu conforto.</p>
+        <span class="service-tag">→ Recuperação em casa</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌸</div>
+        <div class="service-title">Limpeza de Pele</div>
+        <p class="service-desc">Higienização profunda com extração de comedões, esfoliação e finalização hidratante. Pele renovada e saudável.</p>
+        <span class="service-tag">→ Pele mais saudável</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤲</div>
+        <div class="service-title">Massagem Relaxante</div>
+        <p class="service-desc">Técnicas que aliviam a tensão muscular, reduzem o estresse e promovem bem-estar completo para corpo e mente.</p>
+        <span class="service-tag">→ Alívio & relaxamento</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💧</div>
+        <div class="service-title">Drenagem Linfática</div>
+        <p class="service-desc">Movimentos suaves que estimulam o sistema linfático, reduzem inchaço e auxiliam na eliminação de toxinas.</p>
+        <span class="service-tag">→ Redução de inchaço</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <div class="service-title">Massagem Modeladora</div>
+        <p class="service-desc">Auxilia na redução de celulite e medidas, com movimentos específicos que estimulam a circulação e firmeza da pele.</p>
+        <span class="service-tag">→ Modelagem corporal</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💆</div>
+        <div class="service-title">Massagem Terapêutica</div>
+        <p class="service-desc">Indicada para dores musculares, contraturas e tensões crônicas. Alívio eficaz e duradouro com técnica especializada.</p>
+        <span class="service-tag">→ Alívio de dores</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="about-inner">
+    <div style="display:flex;flex-direction:column;gap:1rem">
+      <div class="about-stat-grid">
+        <div class="about-stat">
+          <div class="about-stat-num">+10</div>
+          <div class="about-stat-label">Anos de experiência</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">+500</div>
+          <div class="about-stat-label">Clientes atendidas</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">3</div>
+          <div class="about-stat-label">Especialidades</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">100%</div>
+          <div class="about-stat-label">Domiciliar</div>
+        </div>
+      </div>
+      <div class="about-quote">
+        "Cada cliente merece atenção única. Meu trabalho é levar saúde e bem-estar até a sua porta."
+        <span>— Penha Andreia Miranda Suzano</span>
+      </div>
+    </div>
+    <div>
+      <div class="section-badge">Sobre Mim</div>
+      <h2 class="section-title">Cuidado que<br><em>chega até você</em></h2>
+      <p style="color:var(--stone);font-size:0.95rem;line-height:1.8;font-weight:300;margin-bottom:1rem">
+        Sou Penha Andreia, profissional de estética e bem-estar com mais de uma década de experiência. Minha missão é levar cuidados de qualidade diretamente ao conforto da sua casa, na Grande Vitória e região.
+      </p>
+      <p style="color:var(--stone);font-size:0.95rem;line-height:1.8;font-weight:300;margin-bottom:1rem">
+        Especialista em recuperação pós-cirúrgica, realizo drenagem linfática, curativos e acompanhamento de cicatrização com todo o profissionalismo que você merece.
+      </p>
+      <p style="color:var(--stone);font-size:0.95rem;line-height:1.8;font-weight:300">
+        Trabalho com materiais de alta qualidade, higiene rigorosa e atendimento humanizado, porque cada pessoa merece se sentir bem cuidada.
+      </p>
+      <div class="about-tags">
+        <span class="tag">Pós-Cirúrgico</span>
+        <span class="tag">Estética Facial</span>
+        <span class="tag">Massoterapia</span>
+        <span class="tag">Atendimento Domiciliar</span>
+        <span class="tag">Drenagem Linfática</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="depoimentos">
+  <div class="testimonials-inner">
+    <div class="testimonials-header">
+      <div class="section-badge">Depoimentos</div>
+      <h2 class="section-title">O que dizem minhas clientes</h2>
+      <p class="section-subtitle" style="margin:0 auto">Cada atendimento deixa uma história. Veja o que dizem quem já cuidou da saúde e beleza com a Penha Andreia.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Fiz drenagem pós-cirúrgica com a Penha e foi incrível. Atenciosa, pontual e muito profissional. Minha recuperação foi muito mais tranquila."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">CM</div>
+          <div>
+            <div class="testimonial-name">Carla Mendes</div>
+            <div class="testimonial-info">Pós-Cirúrgico · Grande Vitória</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"A limpeza de pele foi excelente! Ela cuida com tanto carinho e minha pele ficou maravilhosa. Super indico para todo mundo!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RL</div>
+          <div>
+            <div class="testimonial-name">Renata Lima</div>
+            <div class="testimonial-info">Limpeza de Pele · Vitória</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"A massagem relaxante foi a melhor experiência! Vim direto para casa e dormi como há muito não dormia. Vou voltar sempre!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AT</div>
+          <div>
+            <div class="testimonial-name">Ana Torres</div>
+            <div class="testimonial-info">Massagem · Serra</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="gallery-inner">
+    <div class="gallery-header">
+      <div class="section-badge">Galeria</div>
+      <h2 class="section-title">Ambiente & Cuidados</h2>
+      <p class="section-subtitle" style="margin:0 auto">Adicione aqui fotos reais dos seus atendimentos, materiais e resultados.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><div class="gallery-item-inner"><div class="gallery-icon">📸</div><div class="gallery-label">Sua foto aqui</div></div></div>
+      <div class="gallery-item"><div class="gallery-item-inner"><div class="gallery-icon">🌿</div><div class="gallery-label">Ambiente</div></div></div>
+      <div class="gallery-item"><div class="gallery-item-inner"><div class="gallery-icon">✨</div><div class="gallery-label">Estética</div></div></div>
+      <div class="gallery-item"><div class="gallery-item-inner"><div class="gallery-icon">📸</div><div class="gallery-label">Sua foto aqui</div></div></div>
+      <div class="gallery-item"><div class="gallery-item-inner"><div class="gallery-icon">💆</div><div class="gallery-label">Massagem</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="contact-inner">
+    <div>
+      <div class="section-badge">Contato</div>
+      <h2 class="section-title">Vamos agendar<br><em>seu atendimento?</em></h2>
+      <p style="color:var(--stone);font-size:0.9rem;line-height:1.7;font-weight:300;margin-bottom:2rem">
+        Entre em contato pelo WhatsApp ou Instagram. Responderei o mais rápido possível para marcarmos o melhor horário para você na Grande Vitória.
+      </p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon">📱</div>
+          <div>
+            <div class="contact-item-title">WhatsApp</div>
+            <div class="contact-item-val"><a href="https://wa.me/5527992540574">(27) 9 9254-0574</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <div class="contact-item-title">Área de Atendimento</div>
+            <div class="contact-item-val">Espírito Santo — Grande Vitória</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div>
+            <div class="contact-item-title">Horário</div>
+            <div class="contact-item-val">Seg–Sáb: 8h às 19h</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📷</div>
+          <div>
+            <div class="contact-item-title">Instagram</div>
+            <div class="contact-item-val"><a href="https://www.instagram.com/andreiamsuzano/" target="_blank">@andreiamsuzano</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-group">
+        <label class="form-label">Nome completo</label>
+        <input class="form-input" type="text" placeholder="Seu nome">
+      </div>
+      <div class="form-group">
+        <label class="form-label">WhatsApp</label>
+        <input class="form-input" type="tel" placeholder="(27) 9 9999-9999">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Serviço de interesse</label>
+        <select class="form-input">
+          <option>Pós-Cirúrgico</option>
+          <option>Limpeza de Pele</option>
+          <option>Massagem Relaxante</option>
+          <option>Drenagem Linfática</option>
+          <option>Massagem Modeladora</option>
+          <option>Massagem Terapêutica</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Mensagem</label>
+        <textarea class="form-input form-textarea" placeholder="Conte um pouco sobre o que você precisa..."></textarea>
+      </div>
+      <button class="form-btn" onclick="window.open('https://wa.me/5527992540574','_blank')">Enviar Mensagem</button>
+      <a href="https://wa.me/5527992540574" class="whatsapp-btn">💬 Chamar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 <span>Penha Andreia Miranda Suzano</span> — Estética & Bem-Estar · Atendimento Domiciliar · Grande Vitória, ES</p>
+</footer>
+
+</body>
+</html>
