@@ -10,11 +10,16 @@ npm run dev      # http://localhost:3000
 npm run build    # gera a pasta out/ (site estático)
 ```
 
-## Publicação
+## Publicação (Cloudflare Pages)
 
-O workflow `.github/workflows/deploy.yml` faz o build e publica no **GitHub Pages**
-a cada push na `main`. Em *Settings → Pages*, a origem (*Source*) precisa estar em
-**GitHub Actions**. A pasta `out/` também pode ser publicada na Vercel/Netlify.
+Em *Workers & Pages → (projeto) → Settings → Build*:
+
+- **Framework preset:** Next.js (Static HTML Export)
+- **Build command:** `npm run build`
+- **Build output directory:** `out`
+
+A versão do Node vem do arquivo `.node-version` (22). Cada push na `main` publica
+o site; cada branch ganha um link de pré-visualização.
 
 ## Estrutura
 
