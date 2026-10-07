@@ -9,7 +9,7 @@ export default function Home() {
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#galeria">Atendimento</a></li>
         </ul>
       </nav>
 
@@ -196,15 +196,15 @@ export default function Home() {
         <AmbientBackground preset="soft" glowTargets=".gallery-header" />
         <div className="gallery-inner">
           <div className="gallery-header">
-            <div className="section-badge">Galeria</div>
-            <h2 className="section-title">Ambiente & Cuidados</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>Adicione aqui fotos reais dos seus atendimentos, materiais e resultados.</p>
+            <div className="section-badge">Atendimento</div>
+            <h2 className="section-title">Cuidado no conforto da sua casa</h2>
+            <p className="section-subtitle" style={{ margin: '0 auto' }}>Todo o material, a técnica e a atenção de um atendimento profissional, levados até você.</p>
           </div>
           <div className="gallery-grid">
-            <div className="gallery-item"><div className="gallery-item-inner"><div className="gallery-icon">📸</div><div className="gallery-label">Sua foto aqui</div></div></div>
-            <div className="gallery-item"><div className="gallery-item-inner"><div className="gallery-icon">🌿</div><div className="gallery-label">Ambiente</div></div></div>
+            <div className="gallery-item"><div className="gallery-item-inner"><div className="gallery-icon">🏡</div><div className="gallery-label">Atendimento em casa</div></div></div>
+            <div className="gallery-item"><div className="gallery-item-inner"><div className="gallery-icon">🧴</div><div className="gallery-label">Produtos de qualidade</div></div></div>
             <div className="gallery-item"><div className="gallery-item-inner"><div className="gallery-icon">✨</div><div className="gallery-label">Estética</div></div></div>
-            <div className="gallery-item"><div className="gallery-item-inner"><div className="gallery-icon">📸</div><div className="gallery-label">Sua foto aqui</div></div></div>
+            <div className="gallery-item"><div className="gallery-item-inner"><div className="gallery-icon">🩹</div><div className="gallery-label">Pós-operatório</div></div></div>
             <div className="gallery-item"><div className="gallery-item-inner"><div className="gallery-icon">💆</div><div className="gallery-label">Massagem</div></div></div>
           </div>
         </div>
