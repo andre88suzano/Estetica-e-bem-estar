@@ -43,7 +43,7 @@ export interface Particle {
 export class ParticleLayer {
   list: Particle[] = [];
   private sprites: HTMLCanvasElement[];
-  private weights = [0.45, 0.75, 1]; // 45% secondary, 30% primary, 25% light
+  private weights = [0.42, 0.87, 1]; // 42% secondary, 45% primary, 13% light
 
   constructor(
     private cfg: ResolvedConfig,

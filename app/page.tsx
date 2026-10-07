@@ -44,7 +44,7 @@ export default function Home() {
               <div className="hero-card-icon">🌿</div>
               <div>
                 <div className="hero-card-title">Massagem</div>
-                <div className="hero-card-sub">Relaxante, modeladora e terapêutica</div>
+                <div className="hero-card-sub">Relaxante e terapêutica</div>
               </div>
             </div>
           </div>
@@ -52,6 +52,7 @@ export default function Home() {
       </section>
 
       <section className="services" id="servicos">
+        <AmbientBackground preset="soft" glowTargets=".services-header" />
         <div className="services-inner">
           <div className="services-header">
             <div className="section-badge">Serviços</div>
@@ -84,12 +85,6 @@ export default function Home() {
               <span className="service-tag">→ Redução de inchaço</span>
             </div>
             <div className="service-card">
-              <div className="service-icon">🔥</div>
-              <div className="service-title">Massagem Modeladora</div>
-              <p className="service-desc">Auxilia na redução de celulite e medidas, com movimentos específicos que estimulam a circulação e firmeza da pele.</p>
-              <span className="service-tag">→ Modelagem corporal</span>
-            </div>
-            <div className="service-card">
               <div className="service-icon">💆</div>
               <div className="service-title">Massagem Terapêutica com Pedras Quentes</div>
               <p className="service-desc">Indicada para dores musculares, contraturas e tensões crônicas. Alívio eficaz e duradouro com técnica especializada.</p>
@@ -100,6 +95,7 @@ export default function Home() {
       </section>
 
       <section className="about" id="sobre">
+        <AmbientBackground preset="soft" glowTargets=".about-quote, .section-title" />
         <div className="about-inner">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div className="about-stat-grid">
@@ -151,6 +147,7 @@ export default function Home() {
       </section>
 
       <section className="testimonials" id="depoimentos">
+        <AmbientBackground preset="soft" glowTargets=".testimonials-header" />
         <div className="testimonials-inner">
           <div className="testimonials-header">
             <div className="section-badge">Depoimentos</div>
@@ -196,6 +193,7 @@ export default function Home() {
       </section>
 
       <section className="gallery" id="galeria">
+        <AmbientBackground preset="soft" glowTargets=".gallery-header" />
         <div className="gallery-inner">
           <div className="gallery-header">
             <div className="section-badge">Galeria</div>

@@ -155,7 +155,7 @@ export class GradientLayer {
     ctx.rotate((16 * Math.PI) / 180);
     const g = ctx.createLinearGradient(-bw / 2, 0, bw / 2, 0);
     g.addColorStop(0, rgba(this.pal.light, 0));
-    g.addColorStop(0.5, rgba(this.pal.light, 0.16 * o * clamp(env, 0, 1)));
+    g.addColorStop(0.5, rgba(this.pal.light, 0.2 * o * clamp(env, 0, 1)));
     g.addColorStop(1, rgba(this.pal.light, 0));
     ctx.fillStyle = g;
     ctx.fillRect(-bw / 2, -h * 1.1, bw, h * 2.2);
