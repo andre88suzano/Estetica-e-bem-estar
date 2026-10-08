@@ -1,4 +1,6 @@
+import Image from "next/image";
 import AmbientBackground from "@/components/ambient/AmbientBackground";
+import penhaAndreia from "@/assets/penha-andreia.webp";
 
 export default function Home() {
   return (
@@ -95,9 +97,17 @@ export default function Home() {
       </section>
 
       <section className="about" id="sobre">
-        <AmbientBackground preset="soft" glowTargets=".about-quote, .section-title" />
+        <AmbientBackground preset="soft" glowTargets=".about-photo, .section-title" />
         <div className="about-inner">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <figure className="about-photo">
+              <Image
+                src={penhaAndreia}
+                alt="Penha Andreia Miranda Suzano, profissional de estética e bem-estar"
+                sizes="(max-width: 768px) 300px, 360px"
+                placeholder="blur"
+              />
+            </figure>
             <div className="about-stat-grid">
               <div className="about-stat">
                 <div className="about-stat-num">+30</div>
