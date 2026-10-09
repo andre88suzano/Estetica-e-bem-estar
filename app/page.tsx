@@ -39,7 +39,7 @@ export default function Home() {
                 primary: "#C4A574",
                 secondary: "#668675",
                 soft: "#D5E0D5",
-                light: "#668675",
+                light: "#D5E0D5",
               },
             }}
           />
@@ -61,7 +61,8 @@ export default function Home() {
           <a className="hero__scroll" href="#cuidado" aria-label="Descer para conhecer o cuidado"><span /> ROLE PARA DESCOBRIR</a>
         </section>
 
-        <section className="postop section-pad" id="pos-operatorio">
+        <section className="postop section-pad section-ambient-host" id="pos-operatorio">
+          <span className="section-atmosphere section-atmosphere--postop" aria-hidden="true" />
           <div className="section-index section-index--light">01 <span /> CUIDADO ESPECIALIZADO</div>
           <div className="postop__grid">
             <div className="postop__heading" data-reveal>
@@ -109,7 +110,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="story section-pad" id="trajetoria">
+        <section className="story section-pad section-ambient-host" id="trajetoria">
+          <span className="section-atmosphere section-atmosphere--story" aria-hidden="true" />
           <div className="section-index">04 <span /> TRAJETÓRIA</div>
           <div className="story__grid">
             <div className="story__note" data-reveal>
@@ -141,13 +143,15 @@ export default function Home() {
           <div className="homecare__region">GRANDE VITÓRIA<br /><span>ESPÍRITO SANTO</span></div>
         </section>
 
-        <section className="contact section-pad" id="contato">
+        <section className="contact section-pad section-ambient-host" id="contato">
+          <span className="section-atmosphere section-atmosphere--contact" aria-hidden="true" />
           <p className="eyebrow eyebrow--light">UM PRIMEIRO PASSO</p><h2>Vamos conversar<br />sobre <em>o seu cuidado?</em></h2><p className="contact__intro">Conte a Penha o que você procura. Ela poderá orientar você sobre os atendimentos e a disponibilidade.</p>
           <TrackedLink className="button button--light contact__button" href={whatsappLink("Olá, Penha! Gostaria de conversar sobre um atendimento domiciliar na Grande Vitória.")} target="_blank" rel="noreferrer" eventLabel="final_contact">Iniciar conversa pelo WhatsApp <Arrow diagonal /></TrackedLink>
           <div className="contact__meta"><span>ATENDIMENTO DOMICILIAR</span><span>GRANDE VITÓRIA · ES</span></div>
         </section>
       </main>
-      <footer className="footer">
+      <footer className="footer section-ambient-host">
+        <span className="section-atmosphere section-atmosphere--footer" aria-hidden="true" />
         <a className="brand brand--footer" href="#inicio"><span className="brand__name">Penha Andreia</span><span className="brand__descriptor">ESTÉTICA <i>&</i> BEM-ESTAR</span></a>
         <div className="footer__links"><a href="#tratamentos">Tratamentos</a><a href="#trajetoria">Trajetória</a><a href="#contato">Contato</a><a href={site.instagram} target="_blank" rel="noreferrer">Instagram <Arrow diagonal /></a></div>
         <div className="footer__bottom"><span>Atendimento domiciliar · Grande Vitória, ES</span><span>© {new Date().getFullYear()} Penha Andreia</span></div>
