@@ -4,6 +4,7 @@ import penhaAndreia from "@/assets/penha-andreia.webp";
 import { PageViewTracker } from "@/components/PageViewTracker";
 import { SiteHeader } from "@/components/SiteHeader";
 import { TrackedLink } from "@/components/TrackedLink";
+import AmbientBackground from "@/components/ambient/AmbientBackground";
 import { site, whatsappLink } from "@/lib/site";
 
 const services = [
@@ -25,6 +26,23 @@ export default function Home() {
       <SiteHeader />
       <main>
         <section className="hero" id="inicio" aria-labelledby="hero-title">
+          <AmbientBackground
+            className="hero__atmosphere"
+            preset="minimal"
+            parallax={false}
+            scroll={false}
+            glowIntensity={0.045}
+            glowBlur={76}
+            noiseOpacity={0.018}
+            config={{
+              colors: {
+                primary: "#C4A574",
+                secondary: "#668675",
+                soft: "#D5E0D5",
+                light: "#668675",
+              },
+            }}
+          />
           <div className="hero__content">
             <p className="eyebrow"><span className="eyebrow__line" /> ESTÉTICA & BEM-ESTAR · GRANDE VITÓRIA</p>
             <h1 id="hero-title">Seu cuidado,<br /><em>no seu espaço.</em></h1>
@@ -95,9 +113,9 @@ export default function Home() {
           <div className="section-index">04 <span /> TRAJETÓRIA</div>
           <div className="story__grid">
             <div className="story__note" data-reveal>
-              <Image src={penhaAndreia} alt="Penha Andreia em seu retrato profissional" sizes="(max-width: 680px) 90vw, 40vw" />
+              <span className="story__overline">EXPERIÊNCIA PROFISSIONAL</span>
               <span className="story__place">São<br /><em>Paulo</em></span>
-              <span className="story__label">EXPERIÊNCIA PROFISSIONAL<br />NA ANNA PEGOVA</span>
+              <span className="story__label">NA ANNA PEGOVA</span>
               <span className="story__rule" />
               <p>Uma etapa de sua trajetória na estética.</p>
             </div>
