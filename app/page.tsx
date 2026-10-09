@@ -31,7 +31,7 @@ export default function Home() {
             preset="minimal"
             parallax={false}
             scroll={false}
-            glowIntensity={0.045}
+            glowIntensity={0.11}
             glowBlur={76}
             noiseOpacity={0.018}
             config={{
