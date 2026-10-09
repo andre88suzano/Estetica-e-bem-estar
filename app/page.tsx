@@ -1,4 +1,6 @@
 import { Suspense } from "react";
+import Image from "next/image";
+import penhaAndreia from "@/assets/penha-andreia.webp";
 import { AmbientBackground } from "@/components/AmbientBackground";
 import { PageViewTracker } from "@/components/PageViewTracker";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -57,12 +59,9 @@ export default function Home() {
             <div className="hero__trust"><strong>30+</strong><span>anos de experiência<br />em estética</span><i aria-hidden="true" /></div>
             <div className="hero__location"><span className="location-mark" aria-hidden="true">⌖</span> Atendimento domiciliar · {site.region}</div>
           </div>
-          <div className="hero__portrait" aria-label="Espaço reservado para fotografia profissional de Penha Andreia">
-            <div className="portrait-orbit portrait-orbit--one" />
-            <div className="portrait-orbit portrait-orbit--two" />
-            <div className="portrait-monogram">PA</div>
+          <div className="hero__portrait">
+            <Image src={penhaAndreia} alt="Penha Andreia, profissional de estética e bem-estar" priority sizes="(max-width: 680px) 390px, (max-width: 900px) 39vw, 490px" />
             <div className="portrait-caption"><span>RETRATO DE PENHA ANDREIA</span><span>GRANDE VITÓRIA · ES</span></div>
-            <div className="portrait-note">Experiência que<br />acompanha você.</div>
           </div>
           <a className="hero__scroll" href="#cuidado" aria-label="Descer para conhecer o cuidado"><span /> ROLE PARA DESCOBRIR</a>
         </section>

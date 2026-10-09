@@ -1,6 +1,6 @@
 # Penha Andreia — Estética & Bem-Estar
 
-Site institucional em Next.js App Router, React e TypeScript, preparado para deploy na Vercel. O visual usa CSS próprio, componentes enxutos e fundos ambientais sem dependência de animação pesada.
+Site institucional em Next.js App Router, React e TypeScript, hospedado na Vercel. A página usa composição editorial, CSS próprio e movimento ambiental leve.
 
 ## Desenvolvimento
 
@@ -13,24 +13,30 @@ Abra `http://localhost:3000`.
 
 ## Configuração
 
-Copie `.env.example` para `.env.local` se quiser substituir os padrões:
+Copie `.env.example` para `.env.local` para sobrescrever os valores padrão:
 
-- `NEXT_PUBLIC_GA_ID`: identificador GA4 `G-0SWSLV6CF6`.
-- `NEXT_PUBLIC_WHATSAPP_NUMBER`: telefone em formato internacional, apenas dígitos (`5527992540574`, conforme o contato que consta no arquivo local anterior).
-- `NEXT_PUBLIC_SITE_URL`: opcional; defina a URL de produção após o primeiro deploy ou quando um domínio próprio estiver definido. Sem esse valor, o build usa as URLs públicas fornecidas pela Vercel e, localmente, `http://localhost:3000`.
+- `NEXT_PUBLIC_GA_ID`: identificador GA4.
+- `NEXT_PUBLIC_WHATSAPP_NUMBER`: telefone internacional apenas com dígitos.
+- `NEXT_PUBLIC_SITE_URL`: URL de produção opcional. Na Vercel, a URL do projeto é detectada automaticamente.
 
-O GA4 é carregado com `afterInteractive`; page views são enviados pelo rastreador de rota e cliques nos CTAs de contato geram `contact_click` com o rótulo do link. A coleta real depende da publicação, da configuração de privacidade/consentimento aplicável e da validação no DebugView ou relatório em tempo real.
+O GA4 registra visualizações de página e cliques nos links de contato. Após o deploy, valide os eventos no DebugView ou no relatório em tempo real.
 
-## Deploy na Vercel
+## Deploy
 
-Importe o repositório GitHub na Vercel, mantenha o preset Next.js e configure as variáveis de ambiente necessárias no projeto. Faça o deploy e valide o domínio `.vercel.app` gerado. Nenhum DNS ou domínio próprio foi alterado.
+O projeto está vinculado à Vercel. A branch `main` publica em produção conforme a configuração do projeto. O `next.config.ts` mantém exportação estática para a configuração atual.
 
-## Conteúdo ainda necessário
+## Conteúdo
 
-- Fotografia profissional real de Penha para o hero. A página pública atual exibe um retrato, mas o arquivo de imagem não está incluído neste repositório; o monograma local é apenas uma composição temporária e não representa uma fotografia.
-- Fotografias reais para uma galeria. A seção vazia foi removida da página até haver imagens apropriadas.
-- Os três relatos exibidos foram transcritos do conteúdo existente na Vercel. Confirmar autorização e atualidade antes de novas edições ou republicações.
-- Confirmação dos horários e da lista final de recursos utilizados no pós-operatório. O site não publica horários; a seção comunica apenas o cuidado e a necessidade de seguir a equipe de saúde responsável.
-- Confirmar que WhatsApp `+55 27 99254-0574` e Instagram `@andreiamsuzano` continuam ativos antes de divulgar. Ambos aparecem no HTML local legado.
+- O retrato real de Penha está em `assets/penha-andreia.webp`.
+- A galeria foi removida até que existam fotografias reais e autorizadas dos atendimentos.
+- Os relatos vêm do conteúdo público existente; confirme autorização e atualidade antes de republicá-los.
+- Confirme que WhatsApp `+55 27 99254-0574` e Instagram `@andreiamsuzano` continuam ativos antes de divulgar.
+- O conteúdo sobre pós-operatório orienta que a indicação e o momento de cada cuidado sejam avaliados com a equipe de saúde responsável.
 
-Antes de divulgar, adicione as fotografias reais, confirme os canais de contato e os serviços, execute `npm run lint`, `npx tsc --noEmit` e `npm run build`, e verifique o GA4 após o deploy.
+## Verificações
+
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```

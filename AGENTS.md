@@ -53,5 +53,6 @@ Before declaring a visual project complete, score direction, composition, typogr
 - The postoperative section must be careful, individual, within scope, and defer to the responsible medical team. Do not imply every resource is indicated for every patient.
 - The current requested service list excludes Massagem Modeladora. Keep it out of the site and its contact CTAs.
 - Use WhatsApp and Instagram details only from the existing verified project configuration; confirm their current validity before publication.
-- No portrait or gallery image is checked into this repository. Do not synthesize a portrait. Keep the page honest until an authorized real image is added.
-- Treat reviews and testimonials as unpublished unless real, authorized source material is available.
+- A real portrait is present at `assets/penha-andreia.webp`; preserve Penha's identity and never replace it with a generated portrait.
+- No gallery images are checked in. Keep the gallery out until relevant, authorized real photos are available.
+- Treat reviews and testimonials as unpublished unless real, authorized source material is available; confirm currentness before republication.
