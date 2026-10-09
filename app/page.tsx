@@ -33,7 +33,7 @@ export default function Home() {
               <TrackedLink className="button button--dark" href={whatsappLink("Olá, Penha! Gostaria de conversar sobre um atendimento domiciliar.")} target="_blank" rel="noreferrer" eventLabel="hero_primary">Conversar com Penha <Arrow diagonal /></TrackedLink>
               <a className="text-link" href="#tratamentos">Conheça os tratamentos <Arrow /></a>
             </div>
-            <div className="hero__location"><span className="location-mark" aria-hidden="true">⌖</span> Atendimento domiciliar · {site.region}</div>
+            <div className="hero__location"><span className="location-mark" aria-hidden="true" /> Atendimento domiciliar · {site.region}</div>
           </div>
           <div className="hero__portrait">
             <Image src={penhaAndreia} alt="Penha Andreia, profissional de estética e bem-estar" priority sizes="(max-width: 680px) 390px, (max-width: 900px) 39vw, 490px" />
@@ -94,7 +94,13 @@ export default function Home() {
         <section className="story section-pad" id="trajetoria">
           <div className="section-index">04 <span /> TRAJETÓRIA</div>
           <div className="story__grid">
-            <div className="story__note" data-reveal><span className="story__place">São<br /><em>Paulo</em></span><span className="story__label">EXPERIÊNCIA PROFISSIONAL<br />NA ANNA PEGOVA</span><span className="story__rule" /><p>Uma etapa de sua trajetória na estética.</p></div>
+            <div className="story__note" data-reveal>
+              <Image src={penhaAndreia} alt="Penha Andreia em seu retrato profissional" sizes="(max-width: 680px) 90vw, 40vw" />
+              <span className="story__place">São<br /><em>Paulo</em></span>
+              <span className="story__label">EXPERIÊNCIA PROFISSIONAL<br />NA ANNA PEGOVA</span>
+              <span className="story__rule" />
+              <p>Uma etapa de sua trajetória na estética.</p>
+            </div>
             <div className="story__copy" data-reveal><p className="eyebrow">EXPERIÊNCIA QUE ACOLHE</p><h2>Mais de três décadas<br />dedicadas à <em>estética.</em></h2><p>Ao longo de sua trajetória, Penha trabalhou na Anna Pegova, em São Paulo. É formada em Estética e Biomedicina e está cursando uma pós-graduação.</p><div className="timeline"><div><strong>+30 anos</strong><span>de experiência em estética</span></div><div><strong>São Paulo</strong><span>experiência na Anna Pegova</span></div><div><strong>Formação</strong><span>Estética e Biomedicina · pós-graduação em andamento</span></div></div></div>
           </div>
         </section>
