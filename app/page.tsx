@@ -1,17 +1,17 @@
 import { Suspense } from "react";
 import Image from "next/image";
 import penhaAndreia from "@/assets/penha-andreia.webp";
-import { AmbientBackground } from "@/components/AmbientBackground";
 import { PageViewTracker } from "@/components/PageViewTracker";
 import { SiteHeader } from "@/components/SiteHeader";
 import { TrackedLink } from "@/components/TrackedLink";
 import { site, whatsappLink } from "@/lib/site";
 
 const services = [
-  { number: "01", name: "Tratamentos faciais", detail: "Limpeza de pele e cuidados faciais conduzidos com atenção às necessidades de cada pele.", note: "Facial" },
-  { number: "02", name: "Drenagem linfática", detail: "Técnica manual realizada com cuidado e adaptada ao contexto e às necessidades de cada atendimento.", note: "Corporal" },
-  { number: "03", name: "Massagens terapêuticas", detail: "Um atendimento individualizado para momentos de tensão e cuidado corporal.", note: "Bem-estar" },
-  { number: "04", name: "Pedras quentes", detail: "Massagem com pedras aquecidas, realizada em um ritmo acolhedor e atento ao seu conforto.", note: "Bem-estar" },
+  { number: "01", name: "Pós-operatório", detail: "Acompanhamento individualizado em diálogo com as orientações da equipe de saúde responsável.", note: "Cuidado especializado" },
+  { number: "02", name: "Tratamentos faciais", detail: "Limpeza de pele e cuidados faciais conduzidos com atenção às necessidades de cada pele.", note: "Facial" },
+  { number: "03", name: "Drenagem linfática", detail: "Técnica manual realizada com cuidado e adaptada ao contexto e às necessidades de cada atendimento.", note: "Corporal" },
+  { number: "04", name: "Massagens terapêuticas", detail: "Um atendimento individualizado para momentos de tensão e cuidado corporal.", note: "Bem-estar" },
+  { number: "05", name: "Pedras quentes", detail: "Massagem com pedras aquecidas, realizada em um ritmo acolhedor e atento ao seu conforto.", note: "Bem-estar" },
 ];
 
 const testimonials = [
@@ -46,8 +46,6 @@ export default function Home() {
       <SiteHeader />
       <main>
         <section className="hero" id="inicio" aria-labelledby="hero-title">
-          <AmbientBackground intensity="strong" placement="top-right" />
-          <div className="hero__grain" aria-hidden="true" />
           <div className="hero__content">
             <p className="eyebrow"><span className="eyebrow__line" /> PENHA ANDREIA · ESTÉTICA & BEM-ESTAR</p>
             <h1 id="hero-title">Cuidado que<br /><em>respeita o seu tempo.</em></h1>
@@ -82,7 +80,6 @@ export default function Home() {
         </section>
 
         <section className="postop section-pad" id="pos-operatorio">
-          <AmbientBackground intensity="soft" placement="bottom-left" />
           <div className="section-index section-index--light">02 <span /> CUIDADO ESPECIALIZADO</div>
           <div className="postop__grid">
             <div className="postop__heading">
@@ -105,7 +102,7 @@ export default function Home() {
           <div className="services__header"><div><p className="eyebrow">CUIDADO COM INTENÇÃO</p><h2>Um cuidado para<br /><em>cada necessidade.</em></h2></div><p className="services__summary">Conheça as possibilidades e converse com Penha para entender o que faz sentido para você.</p></div>
           <div className="services__list">
             {services.map((service) => (
-              <article className="service-row" key={service.number}>
+              <article className={`service-row${service.number === "01" ? " service-row--featured" : ""}`} key={service.number}>
                 <span className="service-row__number">{service.number}</span>
                 <div className="service-row__main"><h3>{service.name}</h3><p>{service.detail}</p></div>
                 <span className="service-row__note">{service.note}</span>
@@ -116,7 +113,6 @@ export default function Home() {
         </section>
 
         <section className="story section-pad" id="trajetoria">
-          <AmbientBackground intensity="soft" placement="top-right" />
           <div className="section-index">04 <span /> TRAJETÓRIA</div>
           <div className="story__grid">
             <div className="story__note"><span className="story__place">São<br /><em>Paulo</em></span><span className="story__label">EXPERIÊNCIA PROFISSIONAL<br />NA ANNA PEGOVA</span><span className="story__rule" /><p>Uma etapa de sua trajetória na estética.</p></div>
@@ -148,7 +144,6 @@ export default function Home() {
         </section>
 
         <section className="contact section-pad" id="contato">
-          <AmbientBackground intensity="medium" placement="top-right" />
           <p className="eyebrow eyebrow--light">UM PRIMEIRO PASSO</p><h2>Vamos conversar<br />sobre <em>o seu cuidado?</em></h2><p className="contact__intro">Conte a Penha o que você procura. Ela poderá orientar você sobre os atendimentos e a disponibilidade.</p>
           <TrackedLink className="button button--light contact__button" href={whatsappLink("Olá, Penha! Gostaria de conversar sobre um atendimento domiciliar na Grande Vitória.")} target="_blank" rel="noreferrer" eventLabel="final_contact">Iniciar conversa pelo WhatsApp <Arrow diagonal /></TrackedLink>
           <div className="contact__meta"><span>ATENDIMENTO DOMICILIAR</span><span>GRANDE VITÓRIA · ES</span></div>
