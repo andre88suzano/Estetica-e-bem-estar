@@ -17,7 +17,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <a className="brand" href="#inicio" aria-label={`${site.name} — início`} onClick={() => setOpen(false)}>
-        <span className="brand__name">Penha Andreia</span>
+        <span className="brand__name">Andreia Suzano</span>
         <span className="brand__descriptor">ESTÉTICA <i>&</i> BEM-ESTAR</span>
       </a>
       <button
@@ -34,7 +34,7 @@ export function SiteHeader() {
         {links.map(([label, href]) => (
           <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
         ))}
-        <TrackedLink className="header-cta" href={whatsappLink("Olá, Penha! Gostaria de saber sobre os atendimentos domiciliares.")} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
+        <TrackedLink className="header-cta" href={whatsappLink("Olá, Andreia! Gostaria de saber sobre os atendimentos domiciliares.")} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
           Conversar <span aria-hidden="true">↗</span>
         </TrackedLink>
       </nav>
