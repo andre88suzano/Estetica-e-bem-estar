@@ -45,14 +45,14 @@ For substantial visual work:
 
 Before declaring a visual project complete, score direction, composition, typography, assets, design-system consistency, motion, responsiveness, accessibility, performance, and commercial clarity from 0–10. Scores below 8 for direction, composition, typography, assets, or motion require another improvement pass when the issue can be addressed with available material. Scores are a review aid, not a guarantee.
 
-## Penha Andreia project facts
+## Andreia Suzano project facts
 
-- Brand: Penha Andreia — Estética & Bem-Estar. Home visits in Grande Vitória, Espírito Santo.
+- Brand: Andreia Suzano — Estética & Bem-Estar. Home visits in Grande Vitória, Espírito Santo.
 - Verified brief: more than 30 years in aesthetics; professional experience at Anna Pegova in São Paulo; degrees in Estética and Biomedicina; postgraduate study in progress.
-- Do not describe Penha as a doctor. Do not add unsupported institutions, completed specialties, awards, outcomes, or operating hours.
+- Do not describe Andreia as a doctor. Do not add unsupported institutions, completed specialties, awards, outcomes, or operating hours.
 - The postoperative section must be careful, individual, within scope, and defer to the responsible medical team. Do not imply every resource is indicated for every patient.
 - The current requested service list excludes Massagem Modeladora. Keep it out of the site and its contact CTAs.
 - Use WhatsApp and Instagram details only from the existing verified project configuration; confirm their current validity before publication.
-- A real portrait is present at `assets/penha-andreia.webp`; preserve Penha's identity and never replace it with a generated portrait.
+- A real portrait is present at `assets/andreia-suzano.webp`; preserve Andreia's identity and never replace it with a generated portrait.
 - No gallery images are checked in. Keep the gallery out until relevant, authorized real photos are available.
 - Treat reviews and testimonials as unpublished unless real, authorized source material is available; confirm currentness before republication.

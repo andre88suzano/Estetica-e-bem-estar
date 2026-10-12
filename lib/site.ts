@@ -1,5 +1,5 @@
 export const site = {
-  name: "Penha Andreia",
+  name: "Andreia Suzano",
   brand: "Estética & Bem-Estar",
   region: "Grande Vitória, ES",
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5527992540574",

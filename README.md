@@ -1,4 +1,4 @@
-# Penha Andreia — Estética & Bem-Estar
+# Andreia Suzano — Estética & Bem-Estar
 
 Site institucional em Next.js App Router, React e TypeScript, hospedado na Vercel. A página usa composição editorial, CSS próprio e movimento ambiental leve.
 
@@ -27,7 +27,7 @@ O projeto está vinculado à Vercel. A branch `main` publica em produção confo
 
 ## Conteúdo
 
-- O retrato real de Penha está em `assets/penha-andreia.webp`.
+- O retrato real de Andreia está em `assets/andreia-suzano.webp`.
 - A galeria foi removida até que existam fotografias reais e autorizadas dos atendimentos.
 - Os relatos vêm do conteúdo público existente; confirme autorização e atualidade antes de republicá-los.
 - Confirme que WhatsApp `+55 27 99254-0574` e Instagram `@andreiamsuzano` continuam ativos antes de divulgar.

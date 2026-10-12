@@ -4,23 +4,23 @@ import { ScrollReveals } from "@/components/ScrollReveals";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const description = "Estética e bem-estar com atendimento domiciliar na Grande Vitória. Conheça o cuidado profissional de Penha Andreia e converse sobre seu atendimento.";
+const description = "Estética e bem-estar com atendimento domiciliar na Grande Vitória. Conheça o cuidado profissional de Andreia Suzano e converse sobre seu atendimento.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.baseUrl),
-  title: "Penha Andreia | Estética & Bem-Estar na Grande Vitória",
+  title: "Andreia Suzano | Estética & Bem-Estar na Grande Vitória",
   description,
-  applicationName: "Penha Andreia — Estética & Bem-Estar",
+  applicationName: "Andreia Suzano — Estética & Bem-Estar",
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    siteName: "Penha Andreia — Estética & Bem-Estar",
-    title: "Penha Andreia | Estética & Bem-Estar na Grande Vitória",
+    siteName: "Andreia Suzano — Estética & Bem-Estar",
+    title: "Andreia Suzano | Estética & Bem-Estar na Grande Vitória",
     description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Penha Andreia | Estética & Bem-Estar na Grande Vitória",
+    title: "Andreia Suzano | Estética & Bem-Estar na Grande Vitória",
     description,
   },
   robots: { index: true, follow: true },
