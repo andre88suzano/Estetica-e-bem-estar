@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-// Site 100% estático (pasta `out/`), publicado no Cloudflare Pages.
+// Site 100% estático (pasta `out/`), publicado na Vercel.
 // NEXT_PUBLIC_BASE_PATH só é necessário se o site for servido num subcaminho.
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 

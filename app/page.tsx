@@ -2,160 +2,236 @@ import { Suspense } from "react";
 import Image from "next/image";
 import andreiaSuzano from "@/assets/andreia-suzano.webp";
 import { PageViewTracker } from "@/components/PageViewTracker";
+import { Pending } from "@/components/Pending";
 import { SiteHeader } from "@/components/SiteHeader";
 import { TrackedLink } from "@/components/TrackedLink";
-import AmbientBackground from "@/components/ambient/AmbientBackground";
-import { site, whatsappLink } from "@/lib/site";
-
-const services = [
-  { number: "01", name: "Pós-operatório", detail: "Acompanhamento individualizado em diálogo com as orientações da equipe de saúde responsável.", note: "Cuidado especializado" },
-  { number: "02", name: "Tratamentos faciais", detail: "Limpeza de pele e cuidados faciais conduzidos com atenção às necessidades de cada pele.", note: "Facial" },
-  { number: "03", name: "Drenagem linfática", detail: "Técnica manual realizada com cuidado e adaptada ao contexto e às necessidades de cada atendimento.", note: "Corporal" },
-  { number: "04", name: "Massagens terapêuticas", detail: "Um atendimento individualizado para momentos de tensão e cuidado corporal.", note: "Bem-estar" },
-  { number: "05", name: "Pedras quentes", detail: "Massagem com pedras aquecidas, realizada em um ritmo acolhedor e atento ao seu conforto.", note: "Bem-estar" },
-];
-
-function Arrow({ diagonal = false }: { diagonal?: boolean }) {
-  return <span aria-hidden="true" className="arrow">{diagonal ? "↗" : "→"}</span>;
-}
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
+import { credentials, faqs, postopDisclaimer, postopPoints, serviceAreas, services, steps, testimonials } from "@/lib/content";
+import { formatPhone, site, whatsappLink } from "@/lib/site";
 
 export default function Home() {
   return (
     <>
       <Suspense fallback={null}><PageViewTracker /></Suspense>
+      <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <SiteHeader />
-      <main>
+      <main id="conteudo">
         <section className="hero" id="inicio" aria-labelledby="hero-title">
-          <AmbientBackground
-            className="hero__atmosphere"
-            preset="minimal"
-            parallax={false}
-            scroll={false}
-            glowIntensity={0.11}
-            glowBlur={76}
-            noiseOpacity={0.018}
-            config={{
-              colors: {
-                primary: "#C4A574",
-                secondary: "#668675",
-                soft: "#D5E0D5",
-                light: "#D5E0D5",
-              },
-            }}
-          />
-          <div className="hero__content">
-            <p className="eyebrow"><span className="eyebrow__line" /> ESTÉTICA & BEM-ESTAR · GRANDE VITÓRIA</p>
-            <h1 id="hero-title">Seu cuidado,<br /><em>no seu espaço.</em></h1>
-            <p className="hero__intro">Andreia Suzano leva o atendimento estético até você, com mais de 30 anos de experiência e atenção a cada pessoa.</p>
-            <div className="hero__actions">
-              <TrackedLink className="button button--dark" href={whatsappLink("Olá, Andreia! Gostaria de conversar sobre um atendimento domiciliar.")} target="_blank" rel="noreferrer" eventLabel="hero_primary">Conversar com Andreia <Arrow diagonal /></TrackedLink>
-              <a className="text-link" href="#tratamentos">Conheça os tratamentos <Arrow /></a>
+          <div className="container hero__grid">
+            <div className="hero__content">
+              <p className="eyebrow">Atendimento estético domiciliar · {site.region}</p>
+              <h1 id="hero-title">Cuidado estético profissional, <em>no conforto da sua casa.</em></h1>
+              <p className="hero__lead">
+                Andreia Suzano leva o atendimento até você, com mais de 30 anos de experiência em estética e atenção a cada pessoa.
+              </p>
+              <div className="actions">
+                <TrackedLink className="button button--primary" href={whatsappLink("Olá, Andreia! Gostaria de conversar sobre um atendimento domiciliar.")} target="_blank" rel="noreferrer" eventLabel="hero_primary">
+                  <WhatsAppIcon /> Conversar pelo WhatsApp
+                </TrackedLink>
+                <a className="button button--secondary" href="#tratamentos">Ver tratamentos</a>
+              </div>
+              <ul className="credentials" aria-label="Credenciais">
+                {credentials.map((item) => (
+                  <li key={item.value}><strong>{item.value}</strong><span>{item.label}</span></li>
+                ))}
+              </ul>
             </div>
-            <div className="hero__location"><span className="location-mark" aria-hidden="true" /> Atendimento domiciliar · {site.region}</div>
-          </div>
-          <div className="hero__portrait">
-            <Image src={andreiaSuzano} alt="Andreia Suzano, profissional de estética e bem-estar" priority sizes="(max-width: 680px) 390px, (max-width: 900px) 39vw, 490px" />
-            <span className="portrait-index" aria-hidden="true">P · A</span>
-            <div className="portrait-caption"><span>RETRATO DE ANDREIA SUZANO</span><span>GRANDE VITÓRIA · ES</span></div>
-          </div>
-          <a className="hero__scroll" href="#cuidado" aria-label="Descer para conhecer o cuidado"><span /> ROLE PARA DESCOBRIR</a>
-        </section>
-
-        <section className="postop section-pad section-ambient-host" id="pos-operatorio">
-          <span className="section-atmosphere section-atmosphere--postop" aria-hidden="true" />
-          <div className="section-index section-index--light">01 <span /> CUIDADO ESPECIALIZADO</div>
-          <div className="postop__grid">
-            <div className="postop__heading" data-reveal>
-              <p className="eyebrow eyebrow--light">PRESENÇA EM CADA ETAPA</p>
-              <h2>Pós-operatório,<br /><em>com atenção e cuidado.</em></h2>
-              <p className="postop__lead">Um acompanhamento individualizado no ambiente domiciliar, com respeito às orientações da equipe médica responsável.</p>
-              <TrackedLink className="button button--light" href={whatsappLink("Olá, Andreia! Gostaria de conversar sobre atendimento estético no pós-operatório.")} target="_blank" rel="noreferrer" eventLabel="postoperative">Conversar sobre atendimento <Arrow diagonal /></TrackedLink>
-            </div>
-            <div className="postop__details" data-reveal>
-              <div className="detail-line"><span className="detail-line__number">01</span><div><h3>Escuta antes de tudo</h3><p>Entender o momento e as orientações recebidas ajuda a conduzir o atendimento com responsabilidade.</p></div></div>
-              <div className="detail-line"><span className="detail-line__number">02</span><div><h3>Cuidado em casa</h3><p>O atendimento domiciliar oferece acolhimento e praticidade durante o período de recuperação.</p></div></div>
-              <div className="detail-line"><span className="detail-line__number">03</span><div><h3>Cada caso é único</h3><p>Recursos e condutas são conversados individualmente. O atendimento respeita as orientações da equipe médica.</p></div></div>
-              <p className="postop__disclaimer">A indicação e o momento de cada cuidado devem ser avaliados com a equipe de saúde responsável.</p>
-            </div>
+            <figure className="hero__portrait">
+              <Image
+                src={andreiaSuzano}
+                alt="Andreia Suzano, profissional de estética e bem-estar, de jaleco branco"
+                priority
+                sizes="(max-width: 860px) 92vw, 460px"
+              />
+              <Pending>Foto profissional da Andreia (retrato vertical, boa luz, fundo neutro). A foto atual é provisória.</Pending>
+            </figure>
           </div>
         </section>
 
-        <section className="intro section-pad" id="cuidado">
-          <div className="section-index">02 <span /> O CUIDADO</div>
-          <div className="intro__grid" data-reveal>
-            <h2>Uma experiência<br />construída com <em>escuta.</em></h2>
-            <div className="intro__copy">
-              <p>Há mais de 30 anos, Andreia Suzano dedica sua trajetória à estética. Hoje, leva esse cuidado até você, com atendimento domiciliar na Grande Vitória.</p>
-              <a className="text-link" href="#trajetoria">Conheça a trajetória <Arrow /></a>
+        <section className="section services" id="tratamentos" aria-labelledby="services-title">
+          <div className="container">
+            <div className="section-heading">
+              <p className="eyebrow">Tratamentos</p>
+              <h2 id="services-title">Um cuidado para <em>cada necessidade.</em></h2>
+              <p>Conheça as possibilidades e converse com Andreia para entender o que faz sentido para você.</p>
             </div>
-          </div>
-          <div className="intro__rule" />
-          <div className="intro__values">
-            <p><span>01</span> Atenção individual</p><p><span>02</span> Cuidado no seu espaço</p><p><span>03</span> Experiência profissional</p>
-          </div>
-        </section>
-
-        <section className="services section-pad" id="tratamentos">
-          <div className="section-index">03 <span /> TRATAMENTOS</div>
-          <div className="services__header" data-reveal><div><p className="eyebrow">CUIDADO COM INTENÇÃO</p><h2>Um cuidado para<br /><em>cada necessidade.</em></h2></div><p className="services__summary">Conheça as possibilidades e converse com Andreia para entender o que faz sentido para você.</p></div>
-          <div className="services__list">
-            {services.map((service) => (
-              <article className={`service-row${service.number === "01" ? " service-row--featured" : ""}`} key={service.number} data-reveal>
-                <span className="service-row__number">{service.number}</span>
-                <div className="service-row__main"><h3>{service.name}</h3><p>{service.detail}</p></div>
-                <span className="service-row__note">{service.note}</span>
-                <TrackedLink className="service-row__link" href={whatsappLink(`Olá, Andreia! Gostaria de saber mais sobre ${service.name.toLowerCase()}.`)} target="_blank" rel="noreferrer" aria-label={`Consultar sobre ${service.name}`} eventLabel={`service_${service.number}`}>Consultar <Arrow diagonal /></TrackedLink>
-              </article>
-            ))}
+            <ul className="service-grid">
+              {services.map((service, index) => (
+                <li className={`service-card${index === 0 ? " service-card--featured" : ""}`} key={service.slug}>
+                  <p className="service-card__category">{service.category}</p>
+                  <h3>{service.name}</h3>
+                  <p className="service-card__detail">{service.detail}</p>
+                  {index === 0 ? (
+                    <a className="text-link" href="#pos-operatorio">Como funciona o pós-operatório <span aria-hidden="true">→</span></a>
+                  ) : (
+                    <TrackedLink className="text-link" href={whatsappLink(`Olá, Andreia! Gostaria de saber mais sobre ${service.name.toLowerCase()}.`)} target="_blank" rel="noreferrer" eventLabel={`service_0${index + 1}`}>
+                      Perguntar pelo WhatsApp<span className="sr-only"> sobre {service.name.toLowerCase()}</span> <span aria-hidden="true">↗</span>
+                    </TrackedLink>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <Pending>Fotos reais e autorizadas dos atendimentos, e a duração de cada tratamento, se Andreia quiser informar.</Pending>
           </div>
         </section>
 
-        <section className="story section-pad section-ambient-host" id="trajetoria">
-          <span className="section-atmosphere section-atmosphere--story" aria-hidden="true" />
-          <div className="section-index">04 <span /> TRAJETÓRIA</div>
-          <div className="story__grid">
-            <div className="story__note" data-reveal>
-              <span className="story__overline">EXPERIÊNCIA PROFISSIONAL</span>
-              <span className="story__place">São<br /><em>Paulo</em></span>
-              <span className="story__label">NA ANNA PEGOVA</span>
-              <span className="story__rule" />
-              <p>Uma etapa de sua trajetória na estética.</p>
+        <section className="section postop" id="pos-operatorio" aria-labelledby="postop-title">
+          <div className="container postop__grid">
+            <div className="postop__heading">
+              <p className="eyebrow eyebrow--on-dark">Cuidado especializado</p>
+              <h2 id="postop-title">Pós-operatório, <em>com atenção e cuidado.</em></h2>
+              <p>Um acompanhamento individualizado no ambiente domiciliar, com respeito às orientações da equipe médica responsável.</p>
+              <TrackedLink className="button button--light" href={whatsappLink("Olá, Andreia! Gostaria de conversar sobre atendimento estético no pós-operatório.")} target="_blank" rel="noreferrer" eventLabel="postoperative">
+                <WhatsAppIcon /> Falar sobre o pós-operatório
+              </TrackedLink>
             </div>
-            <div className="story__copy" data-reveal><p className="eyebrow">EXPERIÊNCIA QUE ACOLHE</p><h2>Mais de três décadas<br />dedicadas à <em>estética.</em></h2><p>Ao longo de sua trajetória, Andreia trabalhou na Anna Pegova, em São Paulo. É formada em Estética e Biomedicina e está cursando uma pós-graduação.</p><div className="timeline"><div><strong>+30 anos</strong><span>de experiência em estética</span></div><div><strong>São Paulo</strong><span>experiência na Anna Pegova</span></div><div><strong>Formação</strong><span>Estética e Biomedicina · pós-graduação em andamento</span></div></div></div>
-          </div>
-        </section>
-
-        <section className="start section-pad" id="conversa">
-          <div className="section-index">05 <span /> COMO COMEÇAR</div>
-          <div className="start__layout">
-            <div className="start__heading" data-reveal><p className="eyebrow">UM ATENDIMENTO INDIVIDUAL</p><h2>O primeiro passo<br />é uma <em>conversa.</em></h2></div>
-            <div className="start__details" data-reveal>
-              <p>Conte à Andreia o que você procura e em qual região está. Juntas, vocês podem conversar sobre os atendimentos e a disponibilidade.</p>
-              <TrackedLink className="text-link" href={whatsappLink("Olá, Andreia! Gostaria de conversar sobre os atendimentos e a disponibilidade para minha região.")} target="_blank" rel="noreferrer" eventLabel="start_conversation">Fale com a Andreia <Arrow diagonal /></TrackedLink>
+            <div className="postop__details">
+              <ul className="postop__points">
+                {postopPoints.map((point) => (
+                  <li key={point.title}><h3>{point.title}</h3><p>{point.text}</p></li>
+                ))}
+              </ul>
+              <p className="postop__disclaimer"><strong>Importante:</strong> {postopDisclaimer}</p>
             </div>
           </div>
-          <div className="start__rule"><span>01</span><span>CONVERSA</span><i /><span>02</span><span>ATENDIMENTO DOMICILIAR</span><i /><span>03</span><span>GRANDE VITÓRIA</span></div>
         </section>
 
-        <section className="homecare section-pad" id="domiciliar">
-          <div className="homecare__mark" aria-hidden="true"><span>ES</span><small>ATENDIMENTO LOCAL</small></div>
-          <div className="homecare__copy"><p className="eyebrow">NO SEU ESPAÇO, NO SEU TEMPO</p><h2>O cuidado vai<br /><em>até você.</em></h2><p>Andreia atende em domicílio na Grande Vitória, Espírito Santo. Consulte pelo WhatsApp a disponibilidade para sua região e o melhor formato para o seu atendimento.</p><TrackedLink className="text-link" href={whatsappLink("Olá, Andreia! Gostaria de consultar a disponibilidade de atendimento na minha região.")} target="_blank" rel="noreferrer" eventLabel="area_availability">Consultar disponibilidade <Arrow diagonal /></TrackedLink></div>
-          <div className="homecare__region">GRANDE VITÓRIA<br /><span>ESPÍRITO SANTO</span></div>
+        <section className="section about" id="sobre" aria-labelledby="about-title">
+          <div className="container about__grid">
+            <div className="about__heading">
+              <p className="eyebrow">Sobre a Andreia</p>
+              <h2 id="about-title">Mais de três décadas <em>dedicadas à estética.</em></h2>
+            </div>
+            <div className="about__copy">
+              <p>
+                Há mais de 30 anos, Andreia Suzano dedica sua trajetória à estética. Trabalhou na Anna Pegova, em São Paulo,
+                é formada em Estética e Biomedicina e está cursando uma pós-graduação.
+              </p>
+              <p>Hoje, leva esse cuidado até você, com atendimento domiciliar na Grande Vitória e atenção individual a cada pessoa.</p>
+              <dl className="facts">
+                <div><dt>Experiência</dt><dd>Mais de 30 anos em estética</dd></div>
+                <div><dt>Formação</dt><dd>Estética e Biomedicina · pós-graduação em andamento</dd></div>
+                <div><dt>Trajetória</dt><dd>Anna Pegova, São Paulo</dd></div>
+                <div><dt>Atendimento</dt><dd>Domiciliar, na {site.region}</dd></div>
+              </dl>
+              <a className="text-link" href={site.instagram} target="_blank" rel="noreferrer">Acompanhe no Instagram {site.instagramHandle} <span aria-hidden="true">↗</span></a>
+              <Pending>Registro profissional (se houver) e uma segunda foto da Andreia em atendimento, com autorização.</Pending>
+            </div>
+          </div>
         </section>
 
-        <section className="contact section-pad section-ambient-host" id="contato">
-          <span className="section-atmosphere section-atmosphere--contact" aria-hidden="true" />
-          <p className="eyebrow eyebrow--light">UM PRIMEIRO PASSO</p><h2>Vamos conversar<br />sobre <em>o seu cuidado?</em></h2><p className="contact__intro">Conte a Andreia o que você procura. Ela poderá orientar você sobre os atendimentos e a disponibilidade.</p>
-          <TrackedLink className="button button--light contact__button" href={whatsappLink("Olá, Andreia! Gostaria de conversar sobre um atendimento domiciliar na Grande Vitória.")} target="_blank" rel="noreferrer" eventLabel="final_contact">Iniciar conversa pelo WhatsApp <Arrow diagonal /></TrackedLink>
-          <div className="contact__meta"><span>ATENDIMENTO DOMICILIAR</span><span>GRANDE VITÓRIA · ES</span></div>
+        <section className="section steps" id="como-funciona" aria-labelledby="steps-title">
+          <div className="container">
+            <div className="section-heading section-heading--center">
+              <p className="eyebrow">Como funciona</p>
+              <h2 id="steps-title">O primeiro passo <em>é uma conversa.</em></h2>
+            </div>
+            <ol className="step-list">
+              {steps.map((step, index) => (
+                <li key={step.title}>
+                  <span className="step-list__number" aria-hidden="true">{index + 1}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </li>
+              ))}
+            </ol>
+            <div className="actions actions--center">
+              <TrackedLink className="button button--primary" href={whatsappLink("Olá, Andreia! Gostaria de conversar sobre os atendimentos e a disponibilidade para minha região.")} target="_blank" rel="noreferrer" eventLabel="start_conversation">
+                <WhatsAppIcon /> Começar pelo WhatsApp
+              </TrackedLink>
+            </div>
+          </div>
+        </section>
+
+        {testimonials.length > 0 ? (
+          <section className="section testimonials" id="depoimentos" aria-labelledby="testimonials-title">
+            <div className="container">
+              <div className="section-heading">
+                <p className="eyebrow">Depoimentos</p>
+                <h2 id="testimonials-title">Quem já recebeu <em>o cuidado da Andreia.</em></h2>
+              </div>
+              <ul className="testimonial-list">
+                {testimonials.map((item) => (
+                  <li key={item.author}>
+                    <blockquote><p>{item.quote}</p></blockquote>
+                    <p className="testimonial-list__author">{item.author}{item.service ? ` · ${item.service}` : ""}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ) : (
+          <div className="container"><Pending>Depoimentos reais, com autorização por escrito de cada cliente. A seção aparece automaticamente quando forem adicionados em <code>lib/content.ts</code>.</Pending></div>
+        )}
+
+        <section className="section faq" id="duvidas" aria-labelledby="faq-title">
+          <div className="container faq__grid">
+            <div className="faq__area">
+              <p className="eyebrow">Área de atendimento</p>
+              <h2 id="faq-title">Atendimento em casa, <em>na Grande Vitória.</em></h2>
+              <p>Andreia atende em domicílio na Grande Vitória, Espírito Santo. Consulte pelo WhatsApp a disponibilidade para a sua região.</p>
+              {serviceAreas.length > 0 && (
+                <ul className="area-list" aria-label="Regiões atendidas">
+                  {serviceAreas.map((area) => <li key={area}>{area}</li>)}
+                </ul>
+              )}
+              <TrackedLink className="button button--secondary" href={whatsappLink("Olá, Andreia! Gostaria de consultar a disponibilidade de atendimento na minha região.")} target="_blank" rel="noreferrer" eventLabel="area_availability">
+                Consultar minha região <span aria-hidden="true">↗</span>
+              </TrackedLink>
+              {serviceAreas.length === 0 && <Pending>Lista das cidades ou bairros atendidos (por exemplo, quais municípios da Grande Vitória).</Pending>}
+            </div>
+            <div className="faq__list">
+              <h3 className="faq__title">Perguntas frequentes</h3>
+              {faqs.map((faq) => (
+                <details key={faq.question}>
+                  <summary>{faq.question}</summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
+              <Pending>Respostas sobre duração da sessão, dias e horários de atendimento e preparo antes da sessão.</Pending>
+            </div>
+          </div>
+        </section>
+
+        <section className="section contact" id="contato" aria-labelledby="contact-title">
+          <div className="container contact__inner">
+            <h2 id="contact-title">Vamos conversar <em>sobre o seu cuidado?</em></h2>
+            <p>Conte à Andreia o que você procura. Ela vai orientar você sobre os atendimentos e a disponibilidade.</p>
+            <TrackedLink className="button button--light" href={whatsappLink("Olá, Andreia! Gostaria de conversar sobre um atendimento domiciliar na Grande Vitória.")} target="_blank" rel="noreferrer" eventLabel="final_contact">
+              <WhatsAppIcon /> Iniciar conversa pelo WhatsApp
+            </TrackedLink>
+          </div>
         </section>
       </main>
-      <footer className="footer section-ambient-host">
-        <span className="section-atmosphere section-atmosphere--footer" aria-hidden="true" />
-        <a className="brand brand--footer" href="#inicio"><span className="brand__name">Andreia Suzano</span><span className="brand__descriptor">ESTÉTICA <i>&</i> BEM-ESTAR</span></a>
-        <div className="footer__links"><a href="#tratamentos">Tratamentos</a><a href="#trajetoria">Trajetória</a><a href="#contato">Contato</a><a href={site.instagram} target="_blank" rel="noreferrer">Instagram <Arrow diagonal /></a></div>
-        <div className="footer__bottom"><span>Atendimento domiciliar · Grande Vitória, ES</span><span>© {new Date().getFullYear()} Andreia Suzano</span></div>
+
+      <footer className="footer">
+        <div className="container footer__grid">
+          <div>
+            <p className="brand__name brand__name--footer">Andreia Suzano</p>
+            <p>Estética &amp; Bem-Estar · Atendimento domiciliar na {site.region}</p>
+          </div>
+          <ul className="footer__contacts" aria-label="Contatos">
+            <li>
+              <TrackedLink href={whatsappLink("Olá, Andreia! Gostaria de saber sobre os atendimentos domiciliares.")} target="_blank" rel="noreferrer" eventLabel="footer_whatsapp">
+                WhatsApp {formatPhone(site.whatsappNumber)}
+              </TrackedLink>
+            </li>
+            <li><a href={site.instagram} target="_blank" rel="noreferrer">Instagram {site.instagramHandle}</a></li>
+          </ul>
+          <p className="footer__copy">© {new Date().getFullYear()} Andreia Suzano</p>
+        </div>
+        <TrackedLink
+          className="floating-whatsapp"
+          href={whatsappLink("Olá, Andreia! Gostaria de saber sobre os atendimentos domiciliares.")}
+          target="_blank"
+          rel="noreferrer"
+          eventLabel="floating_whatsapp"
+          aria-label="Conversar com Andreia pelo WhatsApp"
+        >
+          <WhatsAppIcon />
+        </TrackedLink>
       </footer>
+
     </>
   );
 }
